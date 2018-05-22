@@ -1,7 +1,5 @@
-[TOC]
-
 # Image scraper
-*This code is a part of test task for [Blue-yonder company.](blue-yonder.com)*
+*This code is a part of test task for [Blue-yonder company.](https://www.blue-yonder.com)*
 
 # Task description
 > Given a plaintext file containing URLs, one per line, e.g.:
@@ -9,6 +7,7 @@
 > http://mywebserver.com/images/271947.jpg
 > http://mywebserver.com/images/24174.jpg
 > http://somewebsrv.com/img/992147.jpg
+
 > Write a script that takes this plaintext file as an argument and downloads all images, storing them on the local hard disk. Approach the problem as you would any task > in a normal day’s work. Imagine this code will be used in important live systems, modified later on by other developers, and so on.
 > Please use the Python programming language for your solution. We prefer to receive your code in GitHub or a similar repository.
 > In a deployment scenario this script needs to be deployed to multiple Debian machines, scheduled to run every five minutes. The downloaded images should be served via > http on each server.
@@ -16,6 +15,7 @@
 
 # Before running
 To start using this script you need to know the list of other servers where to serve scraped data.
+
 To simplify the task I suggest using [**```ngrok```**](https://ngrok.com/) to provide access to local web server from outside. Simple prefered usage:
 ```
 .ngrok http 5000
@@ -29,7 +29,9 @@ Optionaly, you can prevent of starting web server by adding *-ss*:
 ```
 python run_scraper.py -ss
 ```
-Image scraper will automaticaly rerun the task with interval. Default interval is 5 sec. You can specify another period with *-i 60* flag.
+Image scraper will automaticaly rerun the task with interval. Default interval is 5 sec. 
+You can specify another period with *-i 60* flag.
+
 For full help info read "Help & Description" section.
 
 # Usage
@@ -52,6 +54,12 @@ python run_scraper.py -sl http://263e4972.ngrok.io,http://263e4955.ngrok.io
 ```
 > **Note:**  
 > Multiple server public urls should be coma separated with no spaces.
+
+To prevent sendind scraped data to the servers you can specify the *-nd* flag:
+```
+python run_scraper.py -nd
+```
+This will only collect data from given urls.txt.
 
 ## Help & Description
 Image scraper object and it's logic itself described at **```image_scraper.py```**.
