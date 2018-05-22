@@ -1,0 +1,17 @@
+# Ignore default directory for scraped and served images
+received_images/
+scraped_images/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm ide files
+.idea/
+
+# Test cases
+test.py
+
+# temporaty files
+urls.txt___jb_tmp___
